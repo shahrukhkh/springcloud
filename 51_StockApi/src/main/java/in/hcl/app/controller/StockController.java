@@ -2,6 +2,7 @@ package in.hcl.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +31,8 @@ public class StockController {
 	}
 
 	// Remove all stocks from portfolio
-	@DeleteMapping("/remove/all")
-	public String removeAllStocks(@RequestBody String email) {
+	@DeleteMapping("/remove/all/{email}")
+	public String removeAllStocks(@PathVariable String email) {
 		return stockService.removeAllStock(email);
 	}
 }

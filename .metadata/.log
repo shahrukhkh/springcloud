@@ -7812,3 +7812,168 @@ java.lang.NullPointerException
 	at org.springsource.ide.eclipse.commons.livexp.core.LiveVariable.setValue(LiveVariable.java:46)
 	at org.springframework.ide.eclipse.boot.dash.util.AbstractPollingAppReadyStateMonitor$1.run(AbstractPollingAppReadyStateMonitor.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-04-24 13:41:18.772 -----------------------------------------------
+eclipse.buildId=4.21.0.202312011804
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2025-04-24 13:41:20.593
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2025-04-24 13:41:26.868
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-04-24 13:41:26.868
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-04-24 13:41:31.508
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\khans\Downloads\sts-4.21.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+-cp
+C:\Users\khans\Downloads\sts-4.21.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.51.0.202312011752\servers\spring-boot-language-server\BOOT-INF\classes;C:\Users\khans\Downloads\sts-4.21.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.51.0.202312011752\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\Users\khans\Downloads\sts-4.21.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.51.0.202312011752\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/Users/khans/workspace/SBMS/byAshokSir/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1745482291506
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:31.509
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-04-24 13:41:31.538
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 18140
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-04-24 13:41:37.712
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\khans'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.014
+!MESSAGE Boot project ADDED: 02-MSSpringCloudEurekaDiscoveryClient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.015
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.023
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.026
+!MESSAGE Boot project ADDED: 10-CartService
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.028
+!MESSAGE Boot project ADDED: 11-OrderService
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.030
+!MESSAGE Boot project ADDED: 15-SpringCloudEurekaServer
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.033
+!MESSAGE Boot project ADDED: 16-SpringCloudMS1
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.035
+!MESSAGE Boot project ADDED: 17-SpringCloudMS2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.038
+!MESSAGE Boot project ADDED: 18-SpringCloudMS3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.040
+!MESSAGE Boot project ADDED: 19-SpringCloudMS4
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.043
+!MESSAGE Boot project ADDED: 20-SpringCloudAdminServer
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.045
+!MESSAGE Boot project ADDED: 21-SpringCloudAdminClient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.047
+!MESSAGE Boot project ADDED: 22-SpringCloudConfigServer
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.048
+!MESSAGE Boot project ADDED: 23-SpringCloudConfigClient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.051
+!MESSAGE Boot project ADDED: 24-SpringCloudSchedulerService
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.073
+!MESSAGE Boot project ADDED: 25-SpringCloudApiGateway
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.078
+!MESSAGE Boot project ADDED: 50_SpringBoot
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.083
+!MESSAGE Boot project ADDED: 50_SpringBoot-1
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.087
+!MESSAGE Boot project ADDED: 50_SpringBoot-2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.090
+!MESSAGE Boot project ADDED: 51_APIGateway
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.091
+!MESSAGE Boot project ADDED: 51_DiscoveryServer
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.093
+!MESSAGE Boot project ADDED: 51_StockApi
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-04-24 13:41:38.102
+!MESSAGE Boot project ADDED: 51_UserAuthentication
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-04-24 13:59:04.062
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jface.text 2 0 2025-04-24 14:01:29.253
+!MESSAGE Index 1 out of bounds for length 0
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 0
+	at java.base/java.util.ArrayList.add(ArrayList.java:455)
+	at java.base/java.util.ArrayList.add(ArrayList.java:467)
+	at org.eclipse.jdt.internal.corext.fix.LinkedProposalPositionGroupCore.addPosition(LinkedProposalPositionGroupCore.java:224)
+	at org.eclipse.jdt.internal.corext.fix.LinkedProposalPositionGroupCore.addPosition(LinkedProposalPositionGroupCore.java:228)
+	at org.eclipse.jdt.internal.corext.fix.LinkedProposalPositionGroupCore.addPosition(LinkedProposalPositionGroupCore.java:232)
+	at org.eclipse.jdt.internal.ui.text.correction.proposals.LinkedCorrectionProposalCore.addLinkedPosition(LinkedCorrectionProposalCore.java:56)
+	at org.eclipse.jdt.internal.ui.text.correction.proposals.AssignToVariableAssistProposalCore.doAddLocal(AssignToVariableAssistProposalCore.java:339)
+	at org.eclipse.jdt.internal.ui.text.correction.proposals.AssignToVariableAssistProposalCore.getRewrite(AssignToVariableAssistProposalCore.java:177)
+	at org.eclipse.jdt.ui.text.java.correction.ASTRewriteCorrectionProposalCore.addEdits(ASTRewriteCorrectionProposalCore.java:81)
+	at org.eclipse.jdt.core.manipulation.CUCorrectionProposalCore.createTextChange(CUCorrectionProposalCore.java:188)
+	at org.eclipse.jdt.core.manipulation.CUCorrectionProposalCore.createChange(CUCorrectionProposalCore.java:195)
+	at org.eclipse.jdt.core.manipulation.ChangeCorrectionProposalCore.getChange(ChangeCorrectionProposalCore.java:152)
+	at org.eclipse.jdt.core.manipulation.CUCorrectionProposalCore.getTextChange(CUCorrectionProposalCore.java:206)
+	at org.eclipse.jdt.core.manipulation.CUCorrectionProposalCore.getAdditionalProposalInfo(CUCorrectionProposalCore.java:133)
+	at org.eclipse.jdt.ui.text.java.correction.CUCorrectionProposal.getAdditionalProposalInfo(CUCorrectionProposal.java:193)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:116)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
