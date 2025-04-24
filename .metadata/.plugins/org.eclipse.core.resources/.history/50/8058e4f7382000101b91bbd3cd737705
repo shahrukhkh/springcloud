@@ -1,0 +1,13 @@
+package in.hcl.app.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import in.hcl.app.entity.StockTradeDetail;
+
+public interface StockTradeDetailRepo extends JpaRepository<StockTradeDetail, Integer>{
+
+	
+	public List<StockTradeDetail> findByStockCode(Integer stockCode);
+}

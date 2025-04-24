@@ -1,0 +1,8 @@
+
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8◊¥®ÜΩ2b 0132ec8cee01c5dd244e1a60fe6448a1h
+Ä	java:S112"FDefine and throw a dedicated exception instead of using a generic one.8∑ê‘ÜΩ2b b0d4998a26f5b5742ad38c4af8817e32h
+v	java:S125"<This block of commented-out lines of code should be removed.8∑ê‘ÜΩ2b a600f6ef327ab875c8f2e863f525d591h
+ß
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.8∑ê‘ÜΩ2b b0d4998a26f5b5742ad38c4af8817e32h
+v	java:S125"<This block of commented-out lines of code should be removed.8∑ê‘ÜΩ2b 5797bd410035526edf6937febcafc214h

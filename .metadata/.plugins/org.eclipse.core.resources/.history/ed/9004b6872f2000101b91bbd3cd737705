@@ -1,0 +1,5 @@
+package in.hcl.app.DTO;
+
+public class PortfolioResponse {
+
+}

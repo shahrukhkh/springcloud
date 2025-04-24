@@ -1,0 +1,40 @@
+package in.hcl.app.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.entity.Portfolio;
+import in.hcl.app.entity.StockTradeDetail;
+import in.hcl.app.repo.PortfolioRepo;
+import in.hcl.app.repo.StockTradeDetailRepo;
+import in.hcl.app.service.IPortfolioService;
+@Service
+public class PortfolioServiceImpl implements IPortfolioService{
+
+	@Autowired
+	private PortfolioRepo portfolioRepo;
+	@Autowired
+	private StockTradeDetailRepo detailRepoTradeDetailRepo;
+	@Override
+	public String addStock(Integer stockCode) {
+		StockTradeDetail stockTradeDetail = detailRepoTradeDetailRepo.findByStockCode(stockCode).get(0);
+		Portfolio portfolio = new Portfolio();
+		portfolio.setEmail(null);
+		portfolio.setStockCode(stockCode);
+		portfolio.
+		return null;
+	}
+
+	@Override
+	public String remove(String stockCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String removeAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

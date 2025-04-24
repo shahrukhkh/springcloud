@@ -1,0 +1,17 @@
+package in.hcl.app.repo;
+
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import in.hcl.app.entity.Portfolio;
+
+@Repository
+public interface PortfolioRepository extends JpaRepository<Portfolio, Long> {
+    List<Portfolio> findByUserId(String userId);
+    void deleteByUserIdAndStockCode(String userId, Integer stockCode);
+    void deleteByUserId(String userId);
+    boolean existsByUserIdAndStockCode(String userId, Integer stockCode);
+}

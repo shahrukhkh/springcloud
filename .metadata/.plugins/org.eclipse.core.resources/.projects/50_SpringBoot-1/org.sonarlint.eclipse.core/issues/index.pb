@@ -1,0 +1,9 @@
+
+Y
+)src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
+X
+(src/main/java/com/khan/app/Runnring.java,1\e\1e4b3377b90c2c7146a61a59913e54033144d700
+Z
+*src/main/java/com/khan/app/Connection.java,1\5\15ee64311717bfec9c63e27e7db6d9867888748c
+[
++src/main/java/com/khan/app/Application.java,2\c\2c660a8a51f5328e8d98f18486bc0db46bebf792

@@ -1,0 +1,15 @@
+package in.hcl.app.entity;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Entity
+@Data
+public class Portfolio {
+
+	
+	private Long id;
+	private String stockCode;
+	private String stockName;
+	private String email;
+}

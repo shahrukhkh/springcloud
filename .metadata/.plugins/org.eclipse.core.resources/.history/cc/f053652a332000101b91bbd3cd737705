@@ -1,0 +1,118 @@
+package in.hcl.app.entity;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "STOCK_TRADE_DETAILS")
+public class StockTradeDetail {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "Stock_Code")
+    private Integer stockCode;
+
+    @Column(name = "Stock_name", nullable = false, length = 20)
+    private String stockName;
+
+    @Column(name = "Day_Open", precision = 8, scale = 2)
+    private BigDecimal dayOpen;
+
+    @Column(name = "Day_High", precision = 8, scale = 2)
+    private BigDecimal dayHigh;
+
+    @Column(name = "Day_Low", precision = 8, scale = 2)
+    private BigDecimal dayLow;
+
+    @Column(name = "Traded_Price", precision = 8, scale = 2)
+    private BigDecimal tradedPrice;
+
+    @Column(name = "Previous_Close", precision = 8, scale = 2)
+    private BigDecimal previousClose;
+
+    @Column(name = "TRADED_DATE_TIME", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime tradedDateTime;
+
+    // Getters and Setters
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getStockCode() {
+        return stockCode;
+    }
+
+    public void setStockCode(Integer stockCode) {
+        this.stockCode = stockCode;
+    }
+
+    public String getStockName() {
+        return stockName;
+    }
+
+    public void setStockName(String stockName) {
+        this.stockName = stockName;
+    }
+
+    public BigDecimal getDayOpen() {
+        return dayOpen;
+    }
+
+    public void setDayOpen(BigDecimal dayOpen) {
+        this.dayOpen = dayOpen;
+    }
+
+    public BigDecimal getDayHigh() {
+        return dayHigh;
+    }
+
+    public void setDayHigh(BigDecimal dayHigh) {
+        this.dayHigh = dayHigh;
+    }
+
+    public BigDecimal getDayLow() {
+        return dayLow;
+    }
+
+    public void setDayLow(BigDecimal dayLow) {
+        this.dayLow = dayLow;
+    }
+
+    public BigDecimal getTradedPrice() {
+        return tradedPrice;
+    }
+
+    public void setTradedPrice(BigDecimal tradedPrice) {
+        this.tradedPrice = tradedPrice;
+    }
+
+    public BigDecimal getPreviousClose() {
+        return previousClose;
+    }
+
+    public void setPreviousClose(BigDecimal previousClose) {
+        this.previousClose = previousClose;
+    }
+
+    public LocalDateTime getTradedDateTime() {
+        return tradedDateTime;
+    }
+
+    public void setTradedDateTime(LocalDateTime tradedDateTime) {
+        this.tradedDateTime = tradedDateTime;
+    }
+}

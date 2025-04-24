@@ -1,0 +1,52 @@
+package in.hcl.app.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.DTO.PortfolioResponse;
+import in.hcl.app.DTO.StockRequest;
+import in.hcl.app.entity.Portfolio;
+import in.hcl.app.repo.PortfolioRepository;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PortfolioService {
+	private final PortfolioRepository portfolioRepository;
+
+	public PortfolioResponse getPortfolio(String userId) {
+		List<Portfolio> portfolios = portfolioRepository.findByUserId(userId);
+
+		List<PortfolioResponse.StockInfo> stocks = portfolios.stream().map(p -> PortfolioResponse.StockInfo.builder()
+				.stockCode(p.getStockCode()).stockName(p.getStockName()).build()).collect(Collectors.toList());
+
+		return PortfolioResponse.builder().message("Portfolio retrieved successfully").stocks(stocks).build();
+	}
+
+	public PortfolioResponse addStock(String userId, StockRequest request) {
+		if (portfolioRepository.existsByUserIdAndStockCode(userId, request.getStockCode())) {
+			return PortfolioResponse.builder().message("Stock already exists in portfolio").build();
+		}
+
+		Portfolio portfolio = Portfolio.builder().userId(userId).stockCode(request.getStockCode())
+				.stockName(request.getStockName()).addedAt(LocalDateTime.now()).build();
+
+		portfolioRepository.save(portfolio);
+
+		return PortfolioResponse.builder()
+				.message(String.format("Stock '%s' added to portfolio", request.getStockName())).build();
+	}
+
+	public PortfolioResponse removeStock(String userId, Integer stockCode) {
+		portfolioRepository.deleteByUserIdAndStockCode(userId, stockCode);
+		return PortfolioResponse.builder().message("Stock removed from portfolio").build();
+	}
+
+	public PortfolioResponse clearPortfolio(String userId) {
+		portfolioRepository.deleteByUserId(userId);
+		return PortfolioResponse.builder().message("Portfolio cleared successfully").build();
+	}
+}

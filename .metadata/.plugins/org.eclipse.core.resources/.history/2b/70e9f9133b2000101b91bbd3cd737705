@@ -1,0 +1,31 @@
+package in.hcl.app.service;
+
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.entity.StockTradeDetail;
+import in.hcl.app.repo.StockTradeDetailRepo;
+
+@Service
+public class StockService {
+
+	@Autowired
+	private StockTradeDetailRepo tradeDetailRepo;
+	
+	String addStock(Integer stockCode) {
+		
+		StockTradeDetail dummyTrade = StockTradeDetail.builder()
+			    .email("john.doe@example.com")
+			    .stockCode(stockCode)
+			    .stockName("INFY")
+			    .dayOpen(new BigDecimal("1450.25"))
+			    .dayHigh(new BigDecimal("1475.00"))
+			    .dayLow(new BigDecimal("1432.80"))
+			    .tradedPrice(new BigDecimal("1462.50"))
+			    .previousClose(new BigDecimal("1448.60"))
+			    .build();
+		return tradeDetailRepo.save(dummyTrade).getId()!=null?"Hi, "+ dummyTrade.getStockName()+" to your portfolio.":"Failed To add";
+	}
+}

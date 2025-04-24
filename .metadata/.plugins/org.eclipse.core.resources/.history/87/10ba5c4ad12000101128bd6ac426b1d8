@@ -1,0 +1,46 @@
+package in.hcl.app.service;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.entity.StockTradeDetail;
+import in.hcl.app.repo.StockTradeDetailRepo;
+
+@Service
+public class StockService {
+
+	@Autowired
+	private StockTradeDetailRepo tradeDetailRepo;
+
+	public String addStock(Integer stockCode,String email) {
+
+		StockTradeDetail dummyTrade = StockTradeDetail.builder().email(email).stockCode(stockCode)
+				.stockName("INFY").dayOpen(new BigDecimal("1450.25")).dayHigh(new BigDecimal("1475.00"))
+				.dayLow(new BigDecimal("1432.80")).tradedPrice(new BigDecimal("1462.50"))
+				.previousClose(new BigDecimal("1448.60")).tradedDateTime(LocalDateTime.now()).build();
+		
+		dummyTrade.setId(null);
+		return tradeDetailRepo.save(dummyTrade).getId() != null
+				? "Hi, " + dummyTrade.getStockName() + " is added to your portfolio."
+				: "Failed To add";
+	}
+
+	public String removeStock(Integer stockCode,String email) {
+
+		List<StockTradeDetail> byStockCode = tradeDetailRepo.findByStockCode(stockCode);
+		String stockName = byStockCode.get(0).getStockName();
+
+		byStockCode.stream().filter(s->s.getEmail()==email).forEach(s -> tradeDetailRepo.delete(s));
+
+		return "Hi," + stockName + " is removed ";
+	}
+
+	public String removeAllStock(String email) {
+		tradeDetailRepo.deleteAll();
+		return "Portfolio is empty";
+	}
+}

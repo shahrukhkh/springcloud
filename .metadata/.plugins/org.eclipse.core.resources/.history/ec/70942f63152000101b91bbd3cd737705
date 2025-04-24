@@ -1,0 +1,5 @@
+package in.hcl.app.repo;
+
+public interface UserEntityRepo {
+
+}

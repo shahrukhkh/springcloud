@@ -1,0 +1,10 @@
+package in.hcl.app.service;
+
+public interface IPortfolioService {
+
+	
+	
+	String addStock(Integer stockCode);
+	String remove(String stockCode);
+	String removeAll();
+}

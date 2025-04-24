@@ -1,0 +1,18 @@
+package in.hcl.app.service;
+
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReportService {
+
+	
+	
+	public Map<String, String> getTodayReport(){
+		return null;
+	}
+	public Map<String, String> getWeeklyReport(){
+		return null;
+	}
+}

@@ -1,0 +1,11 @@
+
+µ
+java:S6204""zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.8¶√√≥Ê2b f31c9542f92d797a57d6f9bafca179cdh
+µ
+java:S6204."zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.8¶√√≥Ê2b f31c9542f92d797a57d6f9bafca179cdh
+µ
+java:S6204<"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.8ö˜Á≥Ê2b f31c9542f92d797a57d6f9bafca179cdh
+µ
+java:S6204O"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.8ö˜Á≥Ê2b f31c9542f92d797a57d6f9bafca179cdh
+e
+java:S1128"*Remove this unused import 'java.util.Map'.8ö˜Á≥Ê2b 03ec136776d19432e0a31b46ebe07d1ah

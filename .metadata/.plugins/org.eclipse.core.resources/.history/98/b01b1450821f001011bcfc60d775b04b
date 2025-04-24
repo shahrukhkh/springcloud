@@ -1,0 +1,82 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: auth-service
+                fallbackUri: forward:/fallback/auth-service
+        - id: stock-service
+          uri: lb://stock-service
+          predicates:
+            - Path=/api/stocks/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: stock-service
+                fallbackUri: forward:/fallback/stock-service
+            - name: RequestHeader
+              args:
+                name: Authorization
+                value: Bearer ${jwt.token}
+        - id: portfolio-service
+          uri: lb://portfolio-service
+          predicates:
+            - Path=/api/portfolio/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: portfolio-service
+                fallbackUri: forward:/fallback/portfolio-service
+            - name: RequestHeader
+              args:
+                name: Authorization
+                value: Bearer ${jwt.token}
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/api/reports/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: report-service
+                fallbackUri: forward:/fallback/report-service
+            - name: RequestHeader
+              args:
+                name: Authorization
+                value: Bearer ${jwt.token}
+      default-filters:
+        - name: CircuitBreaker
+          args:
+            name: default
+            fallbackUri: forward:/fallback/default
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

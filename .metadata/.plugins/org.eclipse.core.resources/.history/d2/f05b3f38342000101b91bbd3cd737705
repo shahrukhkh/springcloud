@@ -1,0 +1,8 @@
+package in.hcl.app.service;
+
+public interface IStockService {
+
+	
+	
+	String addStock();
+}

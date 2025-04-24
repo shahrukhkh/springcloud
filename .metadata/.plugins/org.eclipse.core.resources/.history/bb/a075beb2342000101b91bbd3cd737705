@@ -1,0 +1,10 @@
+package in.hcl.app.service;
+
+public interface IStockService {
+
+	
+	
+	String addStock(String stockCode,String stockName);
+	String remove(String stockCode);
+	String addStock(String stockCode,String stockName);
+}

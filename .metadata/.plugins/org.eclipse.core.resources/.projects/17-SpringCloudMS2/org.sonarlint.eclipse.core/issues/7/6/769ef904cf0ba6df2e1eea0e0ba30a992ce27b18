@@ -1,0 +1,5 @@
+
+—
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "body".8±«ÞÁÇ2b eacd216e6281a33d221f68139135fae3h
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8±«ÞÁÇ2b 0132ec8cee01c5dd244e1a60fe6448a1h

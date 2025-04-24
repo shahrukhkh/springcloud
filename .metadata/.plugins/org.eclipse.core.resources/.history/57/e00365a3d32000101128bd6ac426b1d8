@@ -1,0 +1,26 @@
+package in.hcl.app.service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.entity.StockTradeDetail;
+import in.hcl.app.repo.StockTradeDetailRepo;
+
+@Service
+public class ReportService {
+	@Autowired
+	private StockTradeDetailRepo tradeRepository;
+	public List<StockTradeDetail> getTodayTrades() {
+        LocalDateTime startOfDay = LocalDate.now().atStartOfDay();
+        LocalDateTime endOfDay = startOfDay.plusDays(1).minusNanos(1);
+        return tradeRepository.findAllByTradedDateTimeBetween(startOfDay, endOfDay);
+    }
+	public Map<String, String> getWeeklyReport(){
+		return null;
+	}
+}

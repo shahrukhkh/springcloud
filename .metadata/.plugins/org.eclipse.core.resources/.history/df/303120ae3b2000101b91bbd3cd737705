@@ -1,0 +1,53 @@
+package in.hcl.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.hcl.app.entity.StockTradeDetail;
+import in.hcl.app.repo.StockTradeDetailRepo;
+import in.hcl.app.service.StockService;
+
+@RestController
+public class StockController {
+
+	@Autowired
+	private StockTradeDetailRepo tradeDetailRepo;
+	@GetMapping("/stock/{stockCode}")
+	public List<StockTradeDetail> get(@PathVariable Integer stockCode) {
+		
+		List<StockTradeDetail> byStockCode = tradeDetailRepo.findByStockCode(stockCode);
+		return byStockCode;
+	}
+	
+	
+	
+	 @Autowired
+	    private StockService stockService;
+
+	    // Add stock to portfolio
+	    @PostMapping("/add")
+	    public String addStock(
+	            @RequestParam Integer stockCode,
+	            @RequestParam String email) {
+	        return stockService.addStock(stockCode, email);
+	    }
+
+	    // Remove stock from portfolio by code
+	    @DeleteMapping("/remove/{stockCode}")
+	    public String removeStock(@PathVariable Integer stockCode) {
+	        return stockService.removeStock(stockCode);
+	    }
+
+	    // Remove all stocks from portfolio
+	    @DeleteMapping("/remove/all")
+	    public String removeAllStocks() {
+	        return stockService.removeAllStock();
+	    }
+}

@@ -1,0 +1,40 @@
+package in.hcl.app.service.impl;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import in.hcl.app.DTO.UserDTO;
+import in.hcl.app.entity.UserEntity;
+import in.hcl.app.repo.UserEntityRepo;
+import in.hcl.app.service.IUserService;
+@Service
+public class UserServiceImpl implements IUserService,UserDetailsService{
+
+	@Autowired
+	private UserEntityRepo entityRepo;
+	@Override
+	public boolean saveUser(UserDTO userDTO) {
+		return entityRepo.save(UserEntity.builder()
+				.email(userDTO.getEmail())
+				.username(userDTO.getUsername())
+				.pwd(userDTO.getPwd()).build())
+				.getUserId()!=null;
+	}
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserEntity user = entityRepo.findByEmail(username)
+				.orElseThrow(() -> new UsernameNotFoundException(username + " NOT FOUND!"));
+
+		
+
+		return new User(user.getEmail(), user.getPwd(), new ArrayList<>());
+	}
+
+}
